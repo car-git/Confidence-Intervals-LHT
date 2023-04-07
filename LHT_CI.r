@@ -9,7 +9,7 @@ library(stats)
 
 # MODIFY PARAMETERS AS NEEDED
 alpha <- 0.05
-fnam <- "test_data_18.csv"
+fnam <- "test_data.csv"
 dir_path <- getwd()
 
 
