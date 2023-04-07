@@ -9,7 +9,7 @@ library(stats)
 
 # MODIFY PARAMETERS AS NEEDED
 alpha <- 0.05
-fnam <- "test_data.csv"
+fnam <- "test_data_18.csv"
 dir_path <- getwd()
 
 
@@ -70,15 +70,15 @@ CI_mu <- c(ET, VT, ET-Z*sqrt(VT/K), ET+Z*sqrt(VT/K))
 cat("Generation time :", CI_mu, "\n")
 
 x_initial_guess <- 0.05  # initial guess for x
-r_sol <- uniroot(function(x) fun(x, t, g, 1/R0), interval = c(0, 1), tol = 1e-6)$root
+r_sol <- uniroot(function(x) fun(x, t, g, 1/R0), interval = c(-1, 1), tol = 1e-6)$root
 
 mu <- 1/R0
 z <- exp(-(2*r_sol)*t)
 s2 <- sum(z * g) - mu^2
 s <- sqrt(s2)
 
-r_L_sol <- uniroot(function(x) fun(x, t, g, mu+Z*s/sqrt(K)), interval = c(0, 1), tol = 1e-6)$root
-r_U_sol <- uniroot(function(x) fun(x, t, g, mu-Z*s/sqrt(K)), interval = c(0, 1), tol = 1e-6)$root
+r_L_sol <- uniroot(function(x) fun(x, t, g, mu+Z*s/sqrt(K)), interval = c(-1, 1), tol = 1e-6)$root
+r_U_sol <- uniroot(function(x) fun(x, t, g, mu-Z*s/sqrt(K)), interval = c(-1, 1), tol = 1e-6)$root
 
 CI_r <- c(r_sol, r_L_sol, r_U_sol)
 cat("r :", CI_r, "\n")
