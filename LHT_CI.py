@@ -71,8 +71,9 @@ VT = ET2 - ET * ET
 CI_mu = np.array([ET, VT, ET - Z * np.sqrt(VT / K), ET + Z * np.sqrt(VT / K)])
 
 # CALCULATE POPULATION GROWTH RATE, r
-x_initial_guess = 0.05
+x_initial_guess = 0.0
 r_sol = fsolve(fun, x_initial_guess, args=(t, g, 1 / R0), xtol=1e-6)
+
 
 mu = 1 / R0
 z = np.exp(-(2 * r_sol) * t)
