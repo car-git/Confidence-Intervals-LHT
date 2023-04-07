@@ -1,6 +1,6 @@
 % MODIFY PARAMETERS AS NEEDED
 alfa = 0.05; % Change parameter as needed
-fnam = "test_data.csv"; % Change file name
+fnam = "test_data_18.csv"; % Change file name
 
 % IMPORT DATA
 T = readtable(fnam);
@@ -40,7 +40,7 @@ CI_G = [ET, VT, ET - Z * sqrt(VT/K), ET + Z * sqrt(VT/K)];
 
 % CALCULATE GROWTH RATE r
 f = @(x) lambd(x, t, g, 1/R0);
-r0 = 0.02;
+r0 = 0.0;
 r = fzero(f, r0);
 
 mu = 1/R0;
