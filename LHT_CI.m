@@ -1,6 +1,6 @@
 % MODIFY PARAMETERS AS NEEDED
 alfa = 0.05; % Change parameter as needed
-fnam = "test_data_18.csv"; % Change file name
+fnam = "test_data.csv"; % Change file name
 
 % IMPORT DATA
 T = readtable(fnam);
