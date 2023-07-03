@@ -45,7 +45,7 @@ r = fzero(f, r0);
 
 mu = 1/R0;
 s2 = exp(-2 * r * t') * g - mu * mu;
-c = Z * sqrt(s2/N);
+c = Z * sqrt(s2/K);
 
 f = @(x) lambd(x, t, g, mu + c);
 r_low = fzero(f, r);
